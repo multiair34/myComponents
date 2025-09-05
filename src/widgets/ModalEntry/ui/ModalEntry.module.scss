@@ -1,0 +1,109 @@
+.wrapper {
+  position: fixed;          /* фиксируем относительно окна */
+  top: 50%;                 /* по вертикали 50% */
+  left: 50%;                /* по горизонтали 50% */
+  transform: translate(-50%, -50%); /* сдвигаем обратно на половину размеров */
+
+  min-width: 400px;         /* минимальная ширина */
+  max-width: 90%;           /* чтобы не выходило за экран */
+  background: var(--background-color);         /* белый фон */
+  border-radius: 12px;      /* скруглённые углы */
+  padding: 20px;            /* внутренние отступы */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* тень */
+  z-index: 1000;
+
+}
+
+.ModalEntry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mainText {
+  font-size: var(--font-size-main);
+  margin-bottom: 15px;
+}
+
+.item:not(:last-of-type) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item:first-child {
+  margin-bottom: 10px;
+}
+
+.item:last-of-type {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.itemInput {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  outline: none;
+  &:focus {
+    outline: 1px solid var(--outline-color);
+  }
+}
+
+.itemText {
+  color: var(--font-color-secondary);
+}
+
+.link {
+  padding-top: 10px;
+}
+
+.ModalButton {
+  align-self: center;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 15px;
+  padding: 10px;
+  border: none;
+  background-color: var(--background-color-primary);
+  color: var(--font-color-primary);
+  margin-top: 10px;
+
+  &:hover {
+    background-color: var(--background-color-hover);
+  }
+
+  &:active {
+    background-color: var(--background-color-active);
+    transform: scale(0.97);
+  }
+
+  &:disabled {
+    background-color: var(--background-color-disabled);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.ExitButton {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+

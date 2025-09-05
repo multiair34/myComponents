@@ -1,0 +1,15 @@
+@import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/light";
+
+.App {
+  box-sizing: content-box;
+  font-family: var(--font-family);
+  background-color: #898a7d;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-size: var(--font-size);
+  color: var(--font-color);
+}
