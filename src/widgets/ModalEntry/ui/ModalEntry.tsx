@@ -17,7 +17,10 @@ export const ModalEntry = () => {
                 <span className={styles.itemText}>Пароль</span>
                 <input className={styles.itemInput} type="password"/>
               </div>
-              <a className={styles.link} href="">Забыли пароль?</a>
+              <div className={styles.linkCont}>
+                <a className={styles.link} href="">Забыли пароль?</a>
+                <a className={styles.link} href="">Зарегистрироваться</a>
+              </div>
               <div className={styles.item}>
                 <span>Запомнить меня</span>
                 <input type="checkbox"/>

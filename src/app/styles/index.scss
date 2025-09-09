@@ -6,7 +6,7 @@
 .App {
   box-sizing: content-box;
   font-family: var(--font-family);
-  background-color: #898a7d;
+  background-color: var(--background-color);
   height: 100vh;
   width: 100%;
   display: flex;

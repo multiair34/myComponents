@@ -1,14 +1,19 @@
 import './styles/index.scss'
 import {ModalEntry} from "../widgets/ModalEntry";
-import {ThemeButton} from "../widgets/ThemeButton";
 import {useAppSelector} from "./hooks.ts";
+import {ModalRegistration} from "../widgets/ModalRegistration";
+import {Header} from "../widgets/Header";
 
 function App() {
   const theme = useAppSelector(state => state.theme.theme)
   return (
     <div className={`App ${theme}`}>
-      <ThemeButton />
-      <ModalEntry />
+      <Header />
+      <main>
+        <ModalRegistration />
+        <ModalEntry />
+      </main>
+
     </div>
   )
 }

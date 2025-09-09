@@ -14,7 +14,7 @@
 
 }
 
-.ModalEntry {
+.ModalRegistration {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -64,10 +64,6 @@
   color: var(--font-color-secondary);
 }
 
-.link {
-  padding-top: 10px;
-}
-
 .ModalButton {
   align-self: center;
   cursor: pointer;
@@ -107,7 +103,23 @@
   }
 }
 
-.linkCont {
-  display: flex;
-  gap: 10px
+.selectCountry {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  outline: none;
+  &:focus {
+    outline: 1px solid var(--outline-color);
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+  appearance: none; //убирает стрелку раскрывающегося списка
+}
+
+.selectCountryItem {
+  color: var(--font-color);
+  background-color: var(--background-color);
 }
