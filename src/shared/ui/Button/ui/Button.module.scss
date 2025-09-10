@@ -1,13 +1,14 @@
-.ThemeButton {
-  width: 4em;
-  height: 2em;
-  margin: 10px;
-  border: none;
-  outline: none;
+.Button {
+  align-self: center;
+  cursor: pointer;
+  width: 50%;
   border-radius: 15px;
-  color: var(--font-color-primary);
+  padding: 10px;
+  border: none;
   background-color: var(--background-color-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: var(--font-color-primary);
+  margin-top: 10px;
+
   &:hover {
     background-color: var(--background-color-hover);
   }

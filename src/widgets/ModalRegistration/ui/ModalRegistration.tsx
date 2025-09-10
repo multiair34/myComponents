@@ -1,12 +1,23 @@
 import styles from "./ModalRegistration.module.scss"
+import {Button} from "../../../shared/ui/Button";
+import {useAppDispatch} from "../../../app/hooks.ts";
+import {openRegistration} from "../../../features/ModalSlice/ModalSlice.ts";
+
 
 export const ModalRegistration = () => {
+    const dispatch = useAppDispatch();
+
     return (
         <div className={styles.wrapper}>
           <div className={styles.ModalRegistration}>
             <div className={styles.head}>
               <h1 className={styles.mainText}>Регистрация</h1>
-              <span className={styles.ExitButton}>✖</span>
+              <span
+                onClick={() => dispatch(openRegistration())}
+                className={styles.ExitButton}
+              >
+                ✖
+              </span>
             </div>
             <div className={styles.item}>
               <span className={styles.itemText}>Ваше имя</span>
@@ -34,7 +45,7 @@ export const ModalRegistration = () => {
               <span>Соглашаюсь на рассылку</span>
               <input type="checkbox" required/>
             </div>
-            <button className={styles.ModalButton}>Продолжить</button>
+            <Button children = "Продолжить"/>
           </div>
         </div>
     );

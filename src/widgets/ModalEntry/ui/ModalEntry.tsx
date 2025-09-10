@@ -1,12 +1,21 @@
 import styles from "./ModalEntry.module.scss"
+import {Button} from "../../../shared/ui/Button";
+import {useAppDispatch} from "../../../app/hooks.ts";
+import {openModalEntry, openRegistration} from "../../../features/ModalSlice/ModalSlice.ts";
 
 export const ModalEntry = () => {
+    const dispatch = useAppDispatch();
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.head}>
               <h1 className={styles.mainText}>Вход</h1>
-              <span className={styles.ExitButton}>✖</span>
+              <span
+                onClick={() => dispatch(openModalEntry())}
+                className={styles.ExitButton}
+              >
+                ✖
+              </span>
             </div>
             <form className={styles.ModalEntry}>
               <div className={styles.item}>
@@ -18,14 +27,20 @@ export const ModalEntry = () => {
                 <input className={styles.itemInput} type="password"/>
               </div>
               <div className={styles.linkCont}>
-                <a className={styles.link} href="">Забыли пароль?</a>
-                <a className={styles.link} href="">Зарегистрироваться</a>
+                <a className={styles.link} href="#">Забыли пароль?</a>
+                <a
+                  onClick={() => dispatch(openRegistration())}
+                  className={styles.link}
+                  href="#"
+                >
+                  Зарегистрироваться
+                </a>
               </div>
               <div className={styles.item}>
                 <span>Запомнить меня</span>
                 <input type="checkbox"/>
               </div>
-              <button className={styles.ModalButton}>Войти</button>
+              <Button children="Войти"/>
             </form>
         </div>
     );
