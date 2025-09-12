@@ -1,10 +1,9 @@
 import styles from "./Header.module.scss"
-import {ThemeButton} from "../../../features/ThemeButton";
-import {useAppDispatch} from "../../../app/hooks.ts";
-import {openModalEntry} from "../../../features/ModalSlice/ModalSlice.ts";
+import {ThemeButton} from "../../../entityes/ThemeButton";
+import {useAuthModals} from "../../../features/auth/"
 
 export const Header = () => {
-    const dispatch = useAppDispatch();
+  const {toggleLoginModal} = useAuthModals()
     return (
         <header className={styles.Wrapper}>
           <div className={styles.header}>
@@ -16,7 +15,7 @@ export const Header = () => {
             </nav>
             <div className={styles.login}>
               <ThemeButton />
-              <button onClick={() => dispatch(openModalEntry())}>ВОЙТИ</button>
+              <button onClick={toggleLoginModal}>ВОЙТИ</button>
             </div>
           </div>
         </header>

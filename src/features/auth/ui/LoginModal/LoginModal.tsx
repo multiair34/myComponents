@@ -1,17 +1,16 @@
-import styles from "./ModalEntry.module.scss"
-import {Button} from "../../../shared/ui/Button";
-import {useAppDispatch} from "../../../app/hooks.ts";
-import {openModalEntry, openRegistration} from "../../../features/ModalSlice/ModalSlice.ts";
+import styles from "./LoginModal.module.scss"
+import {Button} from "../../../../shared/ui/Button";
+import {useAuthModals} from "../../lib/hooks/useAuthModals.ts"
 
-export const ModalEntry = () => {
-    const dispatch = useAppDispatch();
+export const LoginModal = () => {
+    const {toggleLoginModal, toggleSignUpModal} = useAuthModals();
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.head}>
               <h1 className={styles.mainText}>Вход</h1>
               <span
-                onClick={() => dispatch(openModalEntry())}
+                onClick={toggleLoginModal}
                 className={styles.ExitButton}
               >
                 ✖
@@ -29,7 +28,7 @@ export const ModalEntry = () => {
               <div className={styles.linkCont}>
                 <a className={styles.link} href="#">Забыли пароль?</a>
                 <a
-                  onClick={() => dispatch(openRegistration())}
+                  onClick={toggleSignUpModal}
                   className={styles.link}
                   href="#"
                 >

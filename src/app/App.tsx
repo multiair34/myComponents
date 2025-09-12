@@ -1,19 +1,18 @@
 import './styles/index.scss'
-import {ModalEntry} from "../widgets/ModalEntry";
-import {useAppSelector} from "./hooks.ts";
-import {ModalRegistration} from "../widgets/ModalRegistration";
 import {Header} from "../widgets/Header";
+import {useAuthModals, LoginModal, SignUpModal} from "../features/auth";
+import {useTheme} from "../entityes/ThemeButton";
 
 function App() {
-  const theme = useAppSelector(state => state.theme.theme)
-  const isOpen = useAppSelector(state => state.modal.isOpen)
-  const isReg = useAppSelector(state => state.modal.isReg)
+  const {theme} = useTheme();
+
+  const {isLoginOpen, isSignUpOpen} = useAuthModals()
   return (
     <div className={`App ${theme}`}>
       <Header />
       <main>
-        {isOpen && <ModalEntry />}
-        {isReg && <ModalRegistration />}
+        {isLoginOpen && <LoginModal />}
+        {isSignUpOpen && <SignUpModal />}
       </main>
 
     </div>

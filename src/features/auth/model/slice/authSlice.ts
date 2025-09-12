@@ -11,7 +11,7 @@ const initialState: ModalState = {
   isReg: false,
 }
 
-export const ModalSlice = createSlice({
+export const AuthSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
@@ -19,12 +19,12 @@ export const ModalSlice = createSlice({
       state.isOpen = !state.isOpen;
     } ,
     openRegistration: (state:ModalState) => {
-      if(state.isReg === true) state.isOpen = false
       state.isReg = !state.isReg;
+      state.isOpen = false
     },
   }
 })
 
-export const {openModalEntry, openRegistration} = ModalSlice.actions;
-export default ModalSlice.reducer;
+export const {openModalEntry, openRegistration} = AuthSlice.actions;
+export default AuthSlice.reducer;
 // export const selectTheme = ((state: RootState) => state.theme.theme)

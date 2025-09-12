@@ -1,19 +1,16 @@
-import styles from "./ModalRegistration.module.scss"
-import {Button} from "../../../shared/ui/Button";
-import {useAppDispatch} from "../../../app/hooks.ts";
-import {openRegistration} from "../../../features/ModalSlice/ModalSlice.ts";
+import styles from "./SignUpModal.module.scss"
+import {Button} from "../../../../shared/ui/Button";
+import {useAuthModals} from "../../lib/hooks/useAuthModals.ts"
 
-
-export const ModalRegistration = () => {
-    const dispatch = useAppDispatch();
-
+export const SignUpModal = () => {
+    const {toggleSignUpModal} = useAuthModals();
     return (
         <div className={styles.wrapper}>
           <div className={styles.ModalRegistration}>
             <div className={styles.head}>
               <h1 className={styles.mainText}>Регистрация</h1>
               <span
-                onClick={() => dispatch(openRegistration())}
+                onClick={toggleSignUpModal}
                 className={styles.ExitButton}
               >
                 ✖
