@@ -66,6 +66,8 @@
 
 .link {
   padding-top: 10px;
+  color: var(--link-color);
+  border-bottom: 1px solid var(--link-color);
 }
 
 .ExitButton {
