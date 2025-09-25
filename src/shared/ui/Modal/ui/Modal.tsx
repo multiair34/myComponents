@@ -13,7 +13,7 @@ export const Modal = ({children, onClose}: ModalProps) => {
   const onClickEsc = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
+        onClose?.();
       }
     },
     [onClose]

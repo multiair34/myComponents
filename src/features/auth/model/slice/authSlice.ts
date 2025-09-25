@@ -22,9 +22,13 @@ export const AuthSlice = createSlice({
       state.isReg = !state.isReg;
       state.isOpen = false
     },
+    closeModal: (state:ModalState) => {
+      state.isReg = false;
+      state.isOpen = false
+    }
   }
 })
 
-export const {openModalEntry, openRegistration,} = AuthSlice.actions;
+export const {openModalEntry, openRegistration, closeModal} = AuthSlice.actions;
 export default AuthSlice.reducer;
 // export const selectTheme = ((state: RootState) => state.theme.theme)

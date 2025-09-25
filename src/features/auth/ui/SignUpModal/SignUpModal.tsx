@@ -3,11 +3,16 @@ import cls from "classnames"
 import {Button} from "../../../../shared/ui/Button";
 import {useAuthModals} from "../../lib/hooks/useAuthModals.ts"
 import {Input} from "../../../../shared/ui/Input";
+import {Modal} from "../../../../shared/ui/Modal";
 
 export const SignUpModal = () => {
-    const {toggleSignUpModal} = useAuthModals();
+    const {toggleSignUpModal, closeModalEsc} = useAuthModals();
+    const onClose = () => {
+      closeModalEsc()
+    }
+
     return (
-        <div className={cls(styles.wrapper)}>
+        <Modal onClose={onClose}>
           <div className={cls(styles.ModalRegistration)}>
             <div className={cls(styles.head)}>
               <h1 className={cls(styles.mainText)}>Регистрация</h1>
@@ -15,8 +20,8 @@ export const SignUpModal = () => {
                 onClick={toggleSignUpModal}
                 className={cls(styles.ExitButton)}
               >
-                ✖
-              </span>
+                  ✖
+                </span>
             </div>
             <div className={cls(styles.item)}>
               <span className={cls(styles.itemText)}>Ваше имя</span>
@@ -46,6 +51,6 @@ export const SignUpModal = () => {
             </div>
             <Button children = "Продолжить"/>
           </div>
-        </div>
+        </Modal>
     );
 };
