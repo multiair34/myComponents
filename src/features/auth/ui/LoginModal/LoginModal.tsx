@@ -2,12 +2,14 @@ import styles from "./LoginModal.module.scss"
 import cls from "classnames"
 import {Button} from "../../../../shared/ui/Button";
 import {useAuthModals} from "../../lib/hooks/useAuthModals.ts"
+import {Input} from "../../../../shared/ui/Input";
 
 export const LoginModal = () => {
     const {toggleLoginModal, toggleSignUpModal} = useAuthModals();
 
     return (
-        <div className={cls(styles.wrapper)}>
+      <div className={cls(styles.overlay)}>
+        <div className={cls(styles.Modal)}>
             <div className={cls(styles.head)}>
               <h1 className={cls(styles.mainText)}>Вход</h1>
               <span
@@ -20,11 +22,11 @@ export const LoginModal = () => {
             <form className={cls(styles.ModalEntry)}>
               <div className={cls(styles.item)}>
                 <span className={cls(styles.itemText)}>Логин</span>
-                <input className={cls(styles.itemInput)} type="text"/>
+                <Input type={"text"}/>
               </div>
               <div className={cls(styles.item)}>
                 <span className={cls(styles.itemText)}>Пароль</span>
-                <input className={cls(styles.itemInput)} type="password"/>
+                <Input type={"password"}/>
               </div>
               <div className={cls(styles.linkCont)}>
                 <a className={cls(styles.link)} href="#">Забыли пароль?</a>
@@ -38,10 +40,12 @@ export const LoginModal = () => {
               </div>
               <div className={cls(styles.item)}>
                 <span>Запомнить меня</span>
+                {/*Сделать компонент чекбокса или расширить Input */}
                 <input type="checkbox"/>
               </div>
               <Button children="Войти"/>
             </form>
         </div>
+      </div>
     );
 };

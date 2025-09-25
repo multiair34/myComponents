@@ -1,0 +1,11 @@
+.Input {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  outline: none;
+  &:focus {
+    outline: 1px solid var(--outline-color);
+  }
+}

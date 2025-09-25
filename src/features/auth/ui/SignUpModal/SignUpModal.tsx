@@ -2,6 +2,7 @@ import styles from "./SignUpModal.module.scss"
 import cls from "classnames"
 import {Button} from "../../../../shared/ui/Button";
 import {useAuthModals} from "../../lib/hooks/useAuthModals.ts"
+import {Input} from "../../../../shared/ui/Input";
 
 export const SignUpModal = () => {
     const {toggleSignUpModal} = useAuthModals();
@@ -19,19 +20,19 @@ export const SignUpModal = () => {
             </div>
             <div className={cls(styles.item)}>
               <span className={cls(styles.itemText)}>Ваше имя</span>
-              <input type="text" className={cls(styles.itemInput)} required/>
+              <Input type={"text"} />
             </div>
             <div className={cls(styles.item)}>
               <span className={cls(styles.itemText)}>Ваша почта</span>
-              <input type="email" className={cls(styles.itemInput)}/>
+              <Input type={"email"} />
             </div>
             <div className={cls(styles.item)}>
               <span className={cls(styles.itemText)}>Пароль</span>
-              <input type="password" className={cls(styles.itemInput)} required/>
+              <Input type={"password"} />
             </div>
             <div className={cls(styles.item)}>
               <span className={cls(styles.itemText)}>Подтвердить пароль</span>
-              <input type="password" className={cls(styles.itemInput)} required/>
+              <Input type={"password"} />
             </div>
             <span className={cls(styles.itemText)}>Страна проживания</span>
             <select  name="countryes" id="countryesSelect" className={cls(styles.selectCountry)}>
