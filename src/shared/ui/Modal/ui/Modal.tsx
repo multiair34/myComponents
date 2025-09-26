@@ -9,6 +9,7 @@ interface ModalProps {
 }
 
 export const Modal = ({children, onClose}: ModalProps) => {
+  const rootDom: HTMLElement | null = document.getElementById("root");
 
   useEffect(() => {
     const onClickEsc = (event: KeyboardEvent) => {
@@ -21,12 +22,13 @@ export const Modal = ({children, onClose}: ModalProps) => {
       window.removeEventListener("keydown", onClickEsc);
     }
   }, []);
-    return createPortal(
+
+  return createPortal(
         <div className={cls(styles.overlay)}>
           <div className={cls(styles.Modal)}>
             {children}
          </div>
        </div>,
-      document.body
+      rootDom
     )
 };
