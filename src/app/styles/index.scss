@@ -10,7 +10,8 @@ body {
   background-color: var(--background-color);
 }
 
-.App {
+.App,
+.App_Modal {
   box-sizing: content-box;
   background-color: var(--background-color);
   height: 100vh;
